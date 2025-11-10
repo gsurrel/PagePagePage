@@ -1,0 +1,205 @@
+:root {
+    --font-body: sans-serif;
+    --radius: 6px;
+    --accent: AccentColor;
+    --lessaccent: SelectedItem;
+}
+
+html {
+    background: ButtonFace;
+}
+
+/* Main style */
+body {
+    padding: 1rem;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 1rem auto;
+    border: thin var(--lessaccent) solid;
+    background: Canvas;
+    box-shadow: 0 0 3px var(--lessaccent) inset;
+}
+
+/* Header and footer */
+header {
+    /* No specific styles from original CSS */
+}
+
+footer {
+    color: var(--accent);
+}
+
+/* Global styles */
+h1,
+h2,
+h3 {
+    color: var(--accent);
+}
+
+a {
+    color: var(--accent);
+
+    &:visited {
+        color: var(--lessaccent);
+    }
+}
+
+hr {
+    border: thin var(--lessaccent) solid;
+}
+
+
+/* Main article container */
+main {
+    background: Canvas;
+
+    article {
+        section {
+            p {
+                margin: 1.2em 0;
+            }
+
+            code {
+                font-family: monospace;
+                background-color: ButtonFace;
+                padding: 0.2em 0.4em;
+                border-radius: var(--radius);
+            }
+
+            blockquote {
+                margin: 1em 0;
+                padding: 0.5em 1em;
+                background-color: ButtonFace;
+                border-left: 4px solid var(--accent);
+
+                &[cite]::after {
+                    content: attr(cite);
+                    display: block;
+                    color: var(--lessaccent);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+
+            pre {
+                background-color: ButtonFace;
+                padding: 1em;
+                overflow-x: auto;
+                border-radius: var(--radius);
+
+                &::before {
+                    content: attr(data-lang);
+                    display: block;
+                    color: var(--lessaccent);
+                    border-bottom: thin var(--lessaccent) solid;
+                    margin-bottom: 1em;
+                }
+            }
+
+            .spoiler {
+                background-color: GrayText;
+                color: GrayText;
+                border: thin GrayText solid;
+                border-radius: var(--radius);
+                padding: 0.2em 0.4em;
+                transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+                &:hover {
+                    background-color: Canvas;
+                    color: CanvasText;
+                }
+            }
+        }
+
+        figure {
+            text-align: center;
+            margin: 2em 0;
+            padding: 1em;
+            background: ButtonFace;
+            border-radius: var(--radius);
+
+            img {
+                max-width: 100%;
+                max-height: 70vmin;
+                max-width: 70vmin;
+            }
+
+            figcaption {
+                p {
+                    /* No specific styles from original CSS */
+                }
+            }
+
+            .carousel {
+                display: flex;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                align-items: center;
+
+                div {
+                    flex: 0 0 auto;
+                    scroll-snap-align: center;
+                    background-color: Canvas;
+                    margin: 0.5em;
+                    border-radius: 5pt;
+                    padding: 1em;
+
+                    img {
+                        /* No specific styles from original CSS */
+                    }
+
+                    div {
+                        font-size: 18pt;
+                        font-family: monospace;
+
+                        span {
+                            color: var(--accent);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Footer edit timestamps */
+#pub-edit-container {
+    color: var(--lessaccent);
+    text-align: right;
+
+    label {
+        /* No specific styles from original CSS */
+    }
+
+    input[type="datetime-local"] {
+        border: none;
+        color: var(--font-body);
+        background: transparent;
+        font-family: inherit;
+        font-size: inherit;
+    }
+}
+
+/* Button */
+a.button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.75em 1.5em;
+    background-color: var(--lessaccent);
+    color: CanvasText;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--radius);
+    box-shadow: 0 1.5em 1.5em var(--accent) inset;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+a.button:hover {
+    transform: translateY(-2px);
+}
+
+a.button:active {
+    transform: translateY(0);
+}
